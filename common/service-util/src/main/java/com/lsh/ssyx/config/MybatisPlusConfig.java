@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @EnableTransactionManagement
 @Configuration
-@MapperScan("com.lsh.ssyx.*.mapper")
+@MapperScan("com.lsh.ssyx.mapper")
 public class MybatisPlusConfig {
     /**
      * mp插件

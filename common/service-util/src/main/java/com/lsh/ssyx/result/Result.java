@@ -58,7 +58,7 @@ public class Result<T> {
      * @param <T>
      * @return
      */
-    public static<T> Result<T> build(T data,ResultCodeEnum resultCodeEnum) {
+    public static<T> Result<T> build(T data, ResultCodeEnum resultCodeEnum) {
         //创建Result对象，设置值，返回对象
         Result<T> result = new Result<>();
         //判断返回结果中是否需要数据
@@ -82,6 +82,11 @@ public class Result<T> {
     public static<T> Result<T> ok(T data) {
         return build(data, ResultCodeEnum.SUCCESS);
     }
+
+    public static<T> Result<T> ok() {
+        return build(null, ResultCodeEnum.SUCCESS);
+    }
+
 
     /**
      * 失败的方法
