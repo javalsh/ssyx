@@ -7,7 +7,11 @@ import lombok.Getter;
  *
  * @author liushaohua
  */
-@Getter
+
+/**
+ * @author shaohua.liu
+ * Create at 2023/7/4
+ */
 public enum ResultCodeEnum {
 
     /**
