@@ -12,6 +12,7 @@ import lombok.Getter;
  * @author shaohua.liu
  * Create at 2023/7/4
  */
+@Getter
 public enum ResultCodeEnum {
 
     /**

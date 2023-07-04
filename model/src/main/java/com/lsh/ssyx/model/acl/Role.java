@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * <p>
@@ -17,6 +18,7 @@ import lombok.Data;
  * @author shaohua.liu
  * Create at 2023/7/4
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @ApiModel(description = "角色")
 @TableName("role")
