@@ -94,6 +94,7 @@ DockerFile：管理Docker镜像命令文本
 
 最终服务器端架构模块
 
+![image-20230427120227325](https://github.com/javalsh/ssyx/blob/master/images/image-20230427120227325.png)
 
 ssyx：父工程，根目录，管理子模块：
 
