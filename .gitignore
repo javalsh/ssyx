@@ -1,0 +1,9 @@
+# maven output folder
+/target
+
+# Intellij IDEA config
+.idea
+*.iml
+/out
+*/out
+/classes
