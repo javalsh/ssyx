@@ -96,7 +96,7 @@ DockerFile：管理Docker镜像命令文本
 
 ![image-20230427120227325](images\image-20230427120227325.png)
 
-guigu-ssyx-parent：父工程，根目录，管理子模块：
+ssyx：父工程，根目录，管理子模块：
 
 ​	common：公共类父模块
 
@@ -155,13 +155,13 @@ guigu-ssyx-parent：父工程，根目录，管理子模块：
 
 
 
-#### 1.1 搭建父工程guigu-ssyx-parent
+#### 1.1 搭建父工程ssyx
 
 管理子模块及依赖
 
-GroupId：com.atguigu
+GroupId：com.lsh
 
-ArtifactId：guigu-ssyx-parent
+ArtifactId：ssyx
 
 ![image-20230310144246837](images\007.png)
 
@@ -169,9 +169,9 @@ ArtifactId：guigu-ssyx-parent
 
 #### 1.2 搭建工具类父模块common
 
-工具类父模块，继承父工程guigu-ssyx-parent
+工具类父模块，继承父工程ssyx
 
-GroupId：com.atguigu
+GroupId：com.lsh
 
 ArtifactId：common
 
@@ -183,7 +183,7 @@ ArtifactId：common
 
 核心工具类，继承common模块
 
-GroupId：com.atguigu
+GroupId：com.lsh
 
 ArtifactId：common-util
 
@@ -195,7 +195,7 @@ ArtifactId：common-util
 
 service模块工具类，继承common模块
 
-GroupId：com.atguigu
+GroupId：com.lsh
 
 ArtifactId：service-util
 
@@ -207,7 +207,7 @@ ArtifactId：service-util
 
 #### 1.5 搭建实体类模块model
 
-实体类，继承guigu-ssyx-parent
+实体类，继承ssyx
 
 搭建方式如：common
 
@@ -219,7 +219,7 @@ ArtifactId：service-util
 
 #### 1.6 搭建项目模块service
 
-service服务模块，继承guigu-ssyx-parent
+service服务模块，继承ssyx
 
 搭建方式如：common
 
@@ -229,9 +229,9 @@ service服务模块，继承guigu-ssyx-parent
 
 ### 2 配置依赖关系
 
-#### 2.1 guigu-ssyx-parent父工程管理依赖版本
+#### 2.1 ssyx父工程管理依赖版本
 
-修改guigu-ssyx-parent模块pom.xml文件
+修改ssyx模块pom.xml文件
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -240,8 +240,8 @@ service服务模块，继承guigu-ssyx-parent
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.atguigu</groupId>
-    <artifactId>guigu-ssyx-parent</artifactId>
+    <groupId>com.lsh</groupId>
+    <artifactId>ssyx</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
@@ -384,8 +384,8 @@ common公共父模块
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>guigu-ssyx-parent</artifactId>
-        <groupId>com.atguigu</groupId>
+        <artifactId>ssyx</artifactId>
+        <groupId>com.lsh</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -443,7 +443,7 @@ common公共父模块
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>common</artifactId>
-        <groupId>com.atguigu</groupId>
+        <groupId>com.lsh</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -468,7 +468,7 @@ common公共父模块
         </dependency>
         
         <dependency>
-            <groupId>com.atguigu</groupId>
+            <groupId>com.lsh</groupId>
             <artifactId>model</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>provided</scope>
@@ -488,7 +488,7 @@ common公共父模块
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>common</artifactId>
-        <groupId>com.atguigu</groupId>
+        <groupId>com.lsh</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -497,7 +497,7 @@ common公共父模块
 
     <dependencies>
         <dependency>
-            <groupId>com.atguigu</groupId>
+            <groupId>com.lsh</groupId>
             <artifactId>common-util</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
@@ -529,7 +529,7 @@ common公共父模块
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.atguigu</groupId>
+            <groupId>com.lsh</groupId>
             <artifactId>model</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
@@ -548,8 +548,8 @@ common公共父模块
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>guigu-ssyx-parent</artifactId>
-        <groupId>com.atguigu</groupId>
+        <artifactId>ssyx</artifactId>
+        <groupId>com.lsh</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -612,8 +612,8 @@ common公共父模块
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>guigu-ssyx-parent</artifactId>
-        <groupId>com.atguigu</groupId>
+        <artifactId>ssyx</artifactId>
+        <groupId>com.lsh</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -623,13 +623,13 @@ common公共父模块
     <dependencies>
         <!--依赖服务的工具类-->
         <dependency>
-            <groupId>com.atguigu</groupId>
+            <groupId>com.lsh</groupId>
             <artifactId>service-util</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <!--数据载体-->
         <dependency>
-            <groupId>com.atguigu</groupId>
+            <groupId>com.lsh</groupId>
             <artifactId>model</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
@@ -699,7 +699,7 @@ common公共父模块
 **（2）配置MyBatisPlus分页插件**
 
 ```java
-package com.atguigu.ssyx.common.config;
+package com.lsh.ssyx.common.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
@@ -715,7 +715,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @EnableTransactionManagement
 @Configuration
-@MapperScan("com.atguigu.ssyx.*.mapper")
+@MapperScan("com.lsh.ssyx.mapper")
 public class MybatisPlusConfig {
 
     /**
@@ -811,7 +811,7 @@ public class MybatisPlusConfig {
 ##### 3.2.1 创建统一返回结果状态信息类
 
 ```java
-package com.atguigu.ssyx.common.result;
+package com.lsh.ssyx.common.result;
 
 import lombok.Getter;
 /**
@@ -865,7 +865,7 @@ public enum ResultCodeEnum {
 ##### 3.2.2 创建统一返回结果类
 
 ```java
-package com.atguigu.ssyx.common.result;
+package com.lsh.ssyx.common.result;
 
 import lombok.Data;
 
@@ -920,9 +920,9 @@ public class Result<T> {
 ##### 3.3.1 全局异常处理
 
 ```java
-package com.atguigu.ssyx.common.exception;
+package com.lsh.ssyx.common.exception;
 
-import com.atguigu.ssyx.common.result.Result;
+import com.lsh.ssyx.common.result.Result;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -944,9 +944,9 @@ public class GlobalExceptionHandler {
 创建自定义异常类
 
 ```java
-package com.atguigu.ssyx.common.exception;
+package com.lsh.ssyx.common.exception;
 
-import com.atguigu.ssyx.common.result.ResultCodeEnum;
+import com.lsh.ssyx.common.result.ResultCodeEnum;
 import lombok.Data;
 
 @Data
@@ -1037,7 +1037,7 @@ common模块添加依赖
 ##### 3.4.4 添加配置类
 
 ```java
-package com.atguigu.ssyx.common.config;
+package com.lsh.ssyx.common.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -1081,7 +1081,7 @@ public class Swagger2Config {
                 .apiInfo(webApiInfo())
                 .select()
                 //只显示api路径下的页面
-                .apis(RequestHandlerSelectors.basePackage("com.atguigu.ssyx"))
+                .apis(RequestHandlerSelectors.basePackage("com.lsh.ssyx"))
                 .paths(PathSelectors.regex("/api/.*"))
                 .build()
                 .globalOperationParameters(pars);
@@ -1106,7 +1106,7 @@ public class Swagger2Config {
                 .apiInfo(adminApiInfo())
                 .select()
                 //只显示admin路径下的页面
-                .apis(RequestHandlerSelectors.basePackage("com.atguigu.ssyx"))
+                .apis(RequestHandlerSelectors.basePackage("com.lsh.ssyx"))
                 .paths(PathSelectors.regex("/admin/.*"))
                 .build()
                 .globalOperationParameters(pars);
@@ -1266,9 +1266,9 @@ GitHub地址：https://github.com/PanJiaChen/vue-admin-template
 创建IndexController
 
 ```java
-package com.atguigu.ssyx.acl.controller;
+package com.lsh.ssyx.acl.controller;
 
-import com.atguigu.ssyx.common.result.Result;
+import com.lsh.ssyx.common.result.Result;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -1438,7 +1438,7 @@ spring:
 ##### 2.1.3 创建启动类
 
 ```java
-package com.atguigu.ssyx;
+package com.lsh.ssyx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -1541,12 +1541,12 @@ public class BaseEntity implements Serializable {
 ##### 2.2.1 添加RoleController
 
 ```java
-package com.atguigu.ssyx.acl.controller;
+package com.lsh.ssyx.acl.controller;
 
-import com.atguigu.ssyx.acl.service.RoleService;
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.model.acl.Role;
-import com.atguigu.ssyx.vo.acl.RoleQueryVo;
+import com.lsh.ssyx.acl.service.RoleService;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.model.acl.Role;
+import com.lsh.ssyx.vo.acl.RoleQueryVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
@@ -1627,10 +1627,10 @@ public class RoleController {
 **RoleService接口**
 
 ```java
-package com.atguigu.ssyx.acl.service;
+package com.lsh.ssyx.acl.service;
 
-import com.atguigu.ssyx.model.acl.Role;
-import com.atguigu.ssyx.vo.acl.RoleQueryVo;
+import com.lsh.ssyx.model.acl.Role;
+import com.lsh.ssyx.vo.acl.RoleQueryVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -1646,12 +1646,12 @@ public interface RoleService extends IService<Role> {
 **RoleServiceImpl实现类**
 
 ```java
-package com.atguigu.ssyx.acl.service.impl;
+package com.lsh.ssyx.acl.service.impl;
 
-import com.atguigu.ssyx.acl.mapper.RoleMapper;
-import com.atguigu.ssyx.acl.service.RoleService;
-import com.atguigu.ssyx.model.acl.Role;
-import com.atguigu.ssyx.vo.acl.RoleQueryVo;
+import com.lsh.ssyx.acl.mapper.RoleMapper;
+import com.lsh.ssyx.acl.service.RoleService;
+import com.lsh.ssyx.model.acl.Role;
+import com.lsh.ssyx.vo.acl.RoleQueryVo;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -1686,9 +1686,9 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role>
 ##### 2.2.3 添加Mapper
 
 ```java
-package com.atguigu.ssyx.acl.mapper;
+package com.lsh.ssyx.acl.mapper;
 
-import com.atguigu.ssyx.model.acl.Role;
+import com.lsh.ssyx.model.acl.Role;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Repository;
 
@@ -1725,14 +1725,14 @@ public interface RoleMapper extends BaseMapper<Role> {
 ##### 3.1.1 添加AdminController
 
 ```java
-package com.atguigu.ssyx.acl.controller;
+package com.lsh.ssyx.acl.controller;
 
-import com.atguigu.ssyx.acl.service.AdminService;
-import com.atguigu.ssyx.acl.service.RoleService;
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.common.utils.MD5;
-import com.atguigu.ssyx.model.acl.Admin;
-import com.atguigu.ssyx.vo.acl.AdminQueryVo;
+import com.lsh.ssyx.acl.service.AdminService;
+import com.lsh.ssyx.acl.service.RoleService;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.common.utils.MD5;
+import com.lsh.ssyx.model.acl.Admin;
+import com.lsh.ssyx.vo.acl.AdminQueryVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
@@ -1817,10 +1817,10 @@ public class AdminController {
 **AdminService接口**
 
 ```java
-package com.atguigu.ssyx.acl.service;
+package com.lsh.ssyx.acl.service;
 
-import com.atguigu.ssyx.model.acl.Admin;
-import com.atguigu.ssyx.vo.acl.AdminQueryVo;
+import com.lsh.ssyx.model.acl.Admin;
+import com.lsh.ssyx.vo.acl.AdminQueryVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -1845,13 +1845,13 @@ public interface AdminService extends IService<Admin> {
 **AdminServiceImpl实现类**
 
 ```java
-package com.atguigu.ssyx.acl.service.impl;
+package com.lsh.ssyx.acl.service.impl;
 
-import com.atguigu.ssyx.acl.mapper.AdminMapper;
-import com.atguigu.ssyx.acl.service.AdminService;
-import com.atguigu.ssyx.acl.service.RoleService;
-import com.atguigu.ssyx.model.acl.Admin;
-import com.atguigu.ssyx.vo.acl.AdminQueryVo;
+import com.lsh.ssyx.acl.mapper.AdminMapper;
+import com.lsh.ssyx.acl.service.AdminService;
+import com.lsh.ssyx.acl.service.RoleService;
+import com.lsh.ssyx.model.acl.Admin;
+import com.lsh.ssyx.vo.acl.AdminQueryVo;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -1895,9 +1895,9 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin>
 ##### 3.1.3 添加Mapper
 
 ```java
-package com.atguigu.ssyx.acl.mapper;
+package com.lsh.ssyx.acl.mapper;
 
-import com.atguigu.ssyx.model.acl.Admin;
+import com.lsh.ssyx.model.acl.Admin;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Repository;
 /**
@@ -1934,9 +1934,9 @@ public interface AdminMapper extends BaseMapper<Admin> {
 **（1）添加AdminRoleService**
 
 ```java
-package com.atguigu.ssyx.acl.service;
+package com.lsh.ssyx.acl.service;
 
-import com.atguigu.ssyx.model.acl.AdminRole;
+import com.lsh.ssyx.model.acl.AdminRole;
 import com.baomidou.mybatisplus.extension.service.IService;
 /**
  * <p>
@@ -1951,10 +1951,10 @@ public interface AdminRoleService extends IService<AdminRole> {
 **（2）添加AdminRoleServiceImpl**
 
 ```java
-package com.atguigu.ssyx.acl.service.impl;
+package com.lsh.ssyx.acl.service.impl;
 
-import com.atguigu.ssyx.acl.service.AdminRoleService;
-import com.atguigu.ssyx.model.acl.AdminRole;
+import com.lsh.ssyx.acl.service.AdminRoleService;
+import com.lsh.ssyx.model.acl.AdminRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -1973,9 +1973,9 @@ public class AdminRoleServiceImpl extends ServiceImpl<AdminRoleMapper, AdminRole
 **（3）添加AdminRoleMapper**
 
 ```java
-package com.atguigu.ssyx.acl.mapper;
+package com.lsh.ssyx.acl.mapper;
 
-import com.atguigu.ssyx.model.acl.AdminRole;
+import com.lsh.ssyx.model.acl.AdminRole;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
@@ -2214,9 +2214,9 @@ public Map<String, Object> findRoleByUserId(Long adminId) {
 ##### 4.3.1 添加PermissionMapper
 
 ```java
-package com.atguigu.shequ.acl.mapper;
+package com.lsh.shequ.acl.mapper;
 
-import com.atguigu.shequ.acl.entity.Permission;
+import com.lsh.shequ.acl.entity.Permission;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -2239,10 +2239,10 @@ public interface PermissionMapper extends BaseMapper<Permission> {
 **PermissionService接口**
 
 ```java
-package com.atguigu.ssyx.acl.service;
+package com.lsh.ssyx.acl.service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.atguigu.ssyx.model.acl.Permission;
+import com.lsh.ssyx.model.acl.Permission;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
@@ -2265,12 +2265,12 @@ public interface PermissionService extends IService<Permission> {
 **PermissionServiceImpl实现**
 
 ```java
-package com.atguigu.ssyx.acl.service.impl;
+package com.lsh.ssyx.acl.service.impl;
 
-import com.atguigu.ssyx.acl.helper.PermissionHelper;
-import com.atguigu.ssyx.acl.mapper.PermissionMapper;
-import com.atguigu.ssyx.acl.service.PermissionService;
-import com.atguigu.ssyx.model.acl.Permission;
+import com.lsh.ssyx.acl.helper.PermissionHelper;
+import com.lsh.ssyx.acl.mapper.PermissionMapper;
+import com.lsh.ssyx.acl.service.PermissionService;
+import com.lsh.ssyx.model.acl.Permission;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
@@ -2327,9 +2327,9 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
 **添加Menu帮助类PermissionHelper**
 
 ```java
-package com.atguigu.ssyx.acl.helper;
+package com.lsh.ssyx.acl.helper;
 
-import com.atguigu.ssyx.model.acl.Permission;
+import com.lsh.ssyx.model.acl.Permission;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -2384,11 +2384,11 @@ public class PermissionHelper {
 ##### 4.3.3 添加PermissionAdminController
 
 ```java
-package com.atguigu.ssyx.acl.controller;
+package com.lsh.ssyx.acl.controller;
 
-import com.atguigu.ssyx.acl.service.PermissionService;
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.model.acl.Permission;
+import com.lsh.ssyx.acl.service.PermissionService;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.model.acl.Permission;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -2594,12 +2594,12 @@ spring:
 **RegionWareController添加方法**
 
 ```java
-package com.atguigu.ssyx.sys.controller;
+package com.lsh.ssyx.sys.controller;
 
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.model.sys.RegionWare;
-import com.atguigu.ssyx.sys.service.RegionWareService;
-import com.atguigu.ssyx.vo.sys.RegionWareQueryVo;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.model.sys.RegionWare;
+import com.lsh.ssyx.sys.service.RegionWareService;
+import com.lsh.ssyx.vo.sys.RegionWareQueryVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
@@ -2983,7 +2983,7 @@ spring:
 ##### 7.3.3 创建启动类
 
 ```java
-package com.atguigu.ssyx;
+package com.lsh.ssyx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -3022,12 +3022,12 @@ public class ServiceProductApplication {
 ##### 7.4.1 添加CategoryController方法
 
 ```java
-package com.atguigu.ssyx.product.controller;
+package com.lsh.ssyx.product.controller;
 
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.model.product.Category;
-import com.atguigu.ssyx.product.service.CategoryService;
-import com.atguigu.ssyx.vo.product.CategoryQueryVo;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.model.product.Category;
+import com.lsh.ssyx.product.service.CategoryService;
+import com.lsh.ssyx.vo.product.CategoryQueryVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
@@ -3118,10 +3118,10 @@ public class CategoryController {
 **（1）CategoryService定义方法**
 
 ```java
-package com.atguigu.ssyx.product.service;
+package com.lsh.ssyx.product.service;
 
-import com.atguigu.ssyx.model.product.Category;
-import com.atguigu.ssyx.vo.product.CategoryQueryVo;
+import com.lsh.ssyx.model.product.Category;
+import com.lsh.ssyx.vo.product.CategoryQueryVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -3140,12 +3140,12 @@ public interface CategoryService extends IService<Category> {
 **（2）CategoryServiceImpl实现方法**
 
 ```java
-package com.atguigu.ssyx.product.service.impl;
+package com.lsh.ssyx.product.service.impl;
 
-import com.atguigu.ssyx.model.product.Category;
-import com.atguigu.ssyx.product.mapper.CategoryMapper;
-import com.atguigu.ssyx.product.service.CategoryService;
-import com.atguigu.ssyx.vo.product.CategoryQueryVo;
+import com.lsh.ssyx.model.product.Category;
+import com.lsh.ssyx.product.mapper.CategoryMapper;
+import com.lsh.ssyx.product.service.CategoryService;
+import com.lsh.ssyx.vo.product.CategoryQueryVo;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -3195,12 +3195,12 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
 ###### （1）添加AttrGroupController方法
 
 ```java
-package com.atguigu.ssyx.product.controller;
+package com.lsh.ssyx.product.controller;
 
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.model.product.AttrGroup;
-import com.atguigu.ssyx.product.service.AttrGroupService;
-import com.atguigu.ssyx.vo.product.AttrGroupQueryVo;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.model.product.AttrGroup;
+import com.lsh.ssyx.product.service.AttrGroupService;
+import com.lsh.ssyx.vo.product.AttrGroupQueryVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
@@ -3281,10 +3281,10 @@ public class AttrGroupController {
 ###### （2）添加AttrGroupService方法
 
 ```java
-package com.atguigu.ssyx.product.service;
+package com.lsh.ssyx.product.service;
 
-import com.atguigu.ssyx.model.product.AttrGroup;
-import com.atguigu.ssyx.vo.product.AttrGroupQueryVo;
+import com.lsh.ssyx.model.product.AttrGroup;
+import com.lsh.ssyx.vo.product.AttrGroupQueryVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -3304,12 +3304,12 @@ public interface AttrGroupService extends IService<AttrGroup> {
 ###### （3）添加AttrGroupServiceImpl方法
 
 ```java
-package com.atguigu.ssyx.product.service.impl;
+package com.lsh.ssyx.product.service.impl;
 
-import com.atguigu.ssyx.model.product.AttrGroup;
-import com.atguigu.ssyx.product.mapper.AttrGroupMapper;
-import com.atguigu.ssyx.product.service.AttrGroupService;
-import com.atguigu.ssyx.vo.product.AttrGroupQueryVo;
+import com.lsh.ssyx.model.product.AttrGroup;
+import com.lsh.ssyx.product.mapper.AttrGroupMapper;
+import com.lsh.ssyx.product.service.AttrGroupService;
+import com.lsh.ssyx.vo.product.AttrGroupQueryVo;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -3348,11 +3348,11 @@ public class AttrGroupServiceImpl extends ServiceImpl<AttrGroupMapper, AttrGroup
 ###### （1）添加AttrController方法
 
 ```java
-package com.atguigu.ssyx.product.controller;
+package com.lsh.ssyx.product.controller;
 
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.model.product.Attr;
-import com.atguigu.ssyx.product.service.AttrService;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.model.product.Attr;
+import com.lsh.ssyx.product.service.AttrService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -3417,9 +3417,9 @@ public class AttrController {
 ###### （2）添加AttrService方法
 
 ```java
-package com.atguigu.ssyx.product.service;
+package com.lsh.ssyx.product.service;
 
-import com.atguigu.ssyx.model.product.Attr;
+import com.lsh.ssyx.model.product.Attr;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
@@ -3434,11 +3434,11 @@ public interface AttrService extends IService<Attr> {
 ###### （3）添加AttrServiceImpl方法
 
 ```java
-package com.atguigu.ssyx.product.service.impl;
+package com.lsh.ssyx.product.service.impl;
 
-import com.atguigu.ssyx.model.product.Attr;
-import com.atguigu.ssyx.product.mapper.AttrMapper;
-import com.atguigu.ssyx.product.service.AttrService;
+import com.lsh.ssyx.model.product.Attr;
+import com.lsh.ssyx.product.mapper.AttrMapper;
+import com.lsh.ssyx.product.service.AttrService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
@@ -3474,13 +3474,13 @@ public class AttrServiceImpl extends ServiceImpl<AttrMapper, Attr>
 ###### （1）添加SkuInfoController方法
 
 ```java
-package com.atguigu.ssyx.product.controller;
+package com.lsh.ssyx.product.controller;
 
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.model.product.SkuInfo;
-import com.atguigu.ssyx.product.service.SkuInfoService;
-import com.atguigu.ssyx.vo.product.SkuInfoQueryVo;
-import com.atguigu.ssyx.vo.product.SkuInfoVo;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.model.product.SkuInfo;
+import com.lsh.ssyx.product.service.SkuInfoService;
+import com.lsh.ssyx.vo.product.SkuInfoQueryVo;
+import com.lsh.ssyx.vo.product.SkuInfoVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
@@ -3726,10 +3726,10 @@ aliyun:
 ###### 7.6.3.4 添加FileUploadController方法
 
 ```java
-package com.atguigu.ssyx.product.controller;
+package com.lsh.ssyx.product.controller;
 
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.product.service.FileUploadService;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.product.service.FileUploadService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -3758,7 +3758,7 @@ public class FileUploadController {
 ###### 7.6.3.5 添加FileUploadService方法
 
 ```java
-package com.atguigu.ssyx.product.service;
+package com.lsh.ssyx.product.service;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -3775,11 +3775,11 @@ public interface FileUploadService {
 ###### 7.6.3.6 添加FileUploadServiceImpl方法
 
 ```java
-package com.atguigu.ssyx.product.service.impl;
+package com.lsh.ssyx.product.service.impl;
 
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
-import com.atguigu.ssyx.product.service.FileUploadService;
+import com.lsh.ssyx.product.service.FileUploadService;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -4567,7 +4567,7 @@ POST _analyze
     </dependency>
 
     <dependency>
-        <groupId>com.atguigu</groupId>
+        <groupId>com.lsh</groupId>
         <artifactId>service-product-client</artifactId>
         <version>1.0-SNAPSHOT</version>
     </dependency>
@@ -4642,7 +4642,7 @@ spring:
 ##### 10.3.4 创建启动类
 
 ```java
-package com.atguigu.ssyx;
+package com.lsh.ssyx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -4705,14 +4705,14 @@ service-client模块下创建子模块 service-product-client定义接口
 ```xml
 <dependencies>
     <dependency>
-        <groupId>com.atguigu</groupId>
+        <groupId>com.lsh</groupId>
         <artifactId>common-util</artifactId>
         <version>1.0-SNAPSHOT</version>
         <scope>provided </scope>
     </dependency>
 
     <dependency>
-        <groupId>com.atguigu</groupId>
+        <groupId>com.lsh</groupId>
         <artifactId>model</artifactId>
         <version>1.0-SNAPSHOT</version>
         <scope>provided </scope>
@@ -4738,10 +4738,10 @@ service-client模块下创建子模块 service-product-client定义接口
 ###### （1）ProductFeignClient添加定义方法
 
 ```java
-package com.atguigu.ssyx.client.product;
+package com.lsh.ssyx.client.product;
 
-import com.atguigu.ssyx.model.product.Category;
-import com.atguigu.ssyx.model.product.SkuInfo;
+import com.lsh.ssyx.model.product.Category;
+import com.lsh.ssyx.model.product.SkuInfo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -4762,12 +4762,12 @@ public interface ProductFeignClient {
 ##### 10.4.2 创建SkuApiController
 
 ```java
-package com.atguigu.ssyx.search.api;
+package com.lsh.ssyx.search.api;
 
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.model.search.SkuEs;
-import com.atguigu.ssyx.search.service.SkuService;
-import com.atguigu.ssyx.vo.search.SkuEsQueryVo;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.model.search.SkuEs;
+import com.lsh.ssyx.search.service.SkuService;
+import com.lsh.ssyx.vo.search.SkuEsQueryVo;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -4814,10 +4814,10 @@ public class SkuApiController {
 ##### 10.4.3 创建SkuService
 
 ```java
-package com.atguigu.ssyx.search.service;
+package com.lsh.ssyx.search.service;
 
-import com.atguigu.ssyx.model.search.SkuEs;
-import com.atguigu.ssyx.vo.search.SkuEsQueryVo;
+import com.lsh.ssyx.model.search.SkuEs;
+import com.lsh.ssyx.vo.search.SkuEsQueryVo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -4845,16 +4845,16 @@ public interface SkuService {
 ##### 10.4.4 创建SkuServiceImpl
 
 ```java
-package com.atguigu.ssyx.search.service.impl;
+package com.lsh.ssyx.search.service.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.atguigu.ssyx.enums.SkuType;
-import com.atguigu.ssyx.model.product.Category;
-import com.atguigu.ssyx.model.product.SkuInfo;
-import com.atguigu.ssyx.model.search.SkuEs;
-import com.atguigu.ssyx.product.client.ProductFeignClient;
-import com.atguigu.ssyx.search.repository.SkuRepository;
-import com.atguigu.ssyx.search.service.SkuService;
+import com.lsh.ssyx.enums.SkuType;
+import com.lsh.ssyx.model.product.Category;
+import com.lsh.ssyx.model.product.SkuInfo;
+import com.lsh.ssyx.model.search.SkuEs;
+import com.lsh.ssyx.product.client.ProductFeignClient;
+import com.lsh.ssyx.search.repository.SkuRepository;
+import com.lsh.ssyx.search.service.SkuService;
 import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -4929,9 +4929,9 @@ public class SkuServiceImpl implements SkuService {
 ##### 10.4.5 创建SkuRepository
 
 ```java
-package com.atguigu.ssyx.search.repository;
+package com.lsh.ssyx.search.repository;
 
-import com.atguigu.ssyx.model.search.SkuEs;
+import com.lsh.ssyx.model.search.SkuEs;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
@@ -5010,7 +5010,7 @@ docker run -d --restart=always -p 5672:5672 -p 15672:15672 --name rabbitmq rabbi
 ##### 10.5.6 添加service方法
 
 ```java
-package com.atguigu.ssyx.common.service;
+package com.lsh.ssyx.common.service;
 
 import org.springframework.amqp.AmqpException;
 import org.springframework.amqp.core.Message;
@@ -5068,7 +5068,7 @@ public class RabbitService {
 ##### 10.5.7 配置mq消息转换器
 
 ```java
-package com.atguigu.ssyx.common.config;
+package com.lsh.ssyx.common.config;
 
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
@@ -5093,7 +5093,7 @@ public class MQConfig {
 ##### 10.5.8 添加消息的确认配置
 
 ```java
-package com.atguigu.ssyx.common.config;
+package com.lsh.ssyx.common.config;
 
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
@@ -5156,7 +5156,7 @@ public class MQProducerAckConfig implements RabbitTemplate.ReturnCallback,Rabbit
 ##### 10.5.9 添加常量类
 
 ```java
-package com.atguigu.ssyx.common.constant;
+package com.lsh.ssyx.common.constant;
 
 public class MqConst {
     /**
@@ -5229,7 +5229,7 @@ public class MqConst {
 
 ```xml
 <dependency>
-    <groupId>com.atguigu</groupId>
+    <groupId>com.lsh</groupId>
     <artifactId>rabbit-util</artifactId>
     <version>1.0-SNAPSHOT</version>
 </dependency>
@@ -5290,7 +5290,7 @@ public void publish(Long skuId, Integer status) {
 
 ```xml
 <dependency>
-    <groupId>com.atguigu</groupId>
+    <groupId>com.lsh</groupId>
     <artifactId>rabbit-util</artifactId>
     <version>1.0-SNAPSHOT</version>
 </dependency>
@@ -5299,10 +5299,10 @@ public void publish(Long skuId, Integer status) {
 ##### （2）添加SkuReceiver接收MQ消息方法
 
 ```java
-package com.atguigu.ssyx.search.receiver;
+package com.lsh.ssyx.search.receiver;
 
-import com.atguigu.ssyx.common.constant.MqConst;
-import com.atguigu.ssyx.search.service.SkuService;
+import com.lsh.ssyx.common.constant.MqConst;
+import com.lsh.ssyx.search.service.SkuService;
 import com.rabbitmq.client.Channel;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.Exchange;
@@ -5460,7 +5460,7 @@ spring:
 ##### 11.3.3 创建启动类
 
 ```java
-package com.atguigu.ssyx;
+package com.lsh.ssyx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -5495,10 +5495,10 @@ public class ServiceActivityApplication {
 ###### 11.4.1.1 创建ProductInnnerController方法
 
 ```java
-package com.atguigu.ssyx.product.api;
+package com.lsh.ssyx.product.api;
 
-import com.atguigu.ssyx.model.product.SkuInfo;
-import com.atguigu.ssyx.product.service.SkuInfoService;
+import com.lsh.ssyx.model.product.SkuInfo;
+import com.lsh.ssyx.product.service.SkuInfoService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -5589,12 +5589,12 @@ public interface ProductFeignClient {
 ##### 11.4.3 添加ActivityInfoController方法
 
 ```java
-package com.atguigu.ssyx.activity.controller;
+package com.lsh.ssyx.activity.controller;
 
-import com.atguigu.ssyx.activity.service.ActivityInfoService;
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.model.activity.ActivityInfo;
-import com.atguigu.ssyx.vo.activity.ActivityRuleVo;
+import com.lsh.ssyx.activity.service.ActivityInfoService;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.model.activity.ActivityInfo;
+import com.lsh.ssyx.vo.activity.ActivityRuleVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.ApiOperation;
@@ -5691,14 +5691,14 @@ public class ActivityInfoController {
 ##### 11.4.4 添加ActivityInfoService方法
 
 ```java
-package com.atguigu.ssyx.activity.service;
+package com.lsh.ssyx.activity.service;
 
-import com.atguigu.ssyx.model.activity.ActivityInfo;
-import com.atguigu.ssyx.model.activity.ActivityRule;
-import com.atguigu.ssyx.model.order.CartInfo;
-import com.atguigu.ssyx.model.product.SkuInfo;
-import com.atguigu.ssyx.vo.activity.ActivityRuleVo;
-import com.atguigu.ssyx.vo.order.CartInfoVo;
+import com.lsh.ssyx.model.activity.ActivityInfo;
+import com.lsh.ssyx.model.activity.ActivityRule;
+import com.lsh.ssyx.model.order.CartInfo;
+import com.lsh.ssyx.model.product.SkuInfo;
+import com.lsh.ssyx.vo.activity.ActivityRuleVo;
+import com.lsh.ssyx.vo.order.CartInfoVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -5742,19 +5742,19 @@ public interface ActivityInfoService extends IService<ActivityInfo> {
 ##### 11.4.5 添加ActivityInfoServiceImpl方法
 
 ```java
-package com.atguigu.ssyx.activity.service.impl;
+package com.lsh.ssyx.activity.service.impl;
 
-import com.atguigu.ssyx.activity.mapper.ActivityInfoMapper;
-import com.atguigu.ssyx.activity.mapper.ActivityRuleMapper;
-import com.atguigu.ssyx.activity.mapper.ActivitySkuMapper;
-import com.atguigu.ssyx.activity.service.ActivityInfoService;
-import com.atguigu.ssyx.enums.ActivityType;
-import com.atguigu.ssyx.model.activity.ActivityInfo;
-import com.atguigu.ssyx.model.activity.ActivityRule;
-import com.atguigu.ssyx.model.activity.ActivitySku;
-import com.atguigu.ssyx.model.product.SkuInfo;
-import com.atguigu.ssyx.product.client.ProductFeignClient;
-import com.atguigu.ssyx.vo.activity.ActivityRuleVo;
+import com.lsh.ssyx.activity.mapper.ActivityInfoMapper;
+import com.lsh.ssyx.activity.mapper.ActivityRuleMapper;
+import com.lsh.ssyx.activity.mapper.ActivitySkuMapper;
+import com.lsh.ssyx.activity.service.ActivityInfoService;
+import com.lsh.ssyx.enums.ActivityType;
+import com.lsh.ssyx.model.activity.ActivityInfo;
+import com.lsh.ssyx.model.activity.ActivityRule;
+import com.lsh.ssyx.model.activity.ActivitySku;
+import com.lsh.ssyx.model.product.SkuInfo;
+import com.lsh.ssyx.product.client.ProductFeignClient;
+import com.lsh.ssyx.vo.activity.ActivityRuleVo;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -5896,10 +5896,10 @@ public class ActivityInfoServiceImpl extends ServiceImpl<ActivityInfoMapper, Act
 ##### 11.4.6 添加ActivityInfoMapper方法
 
 ```java
-package com.atguigu.ssyx.activity.mapper;
+package com.lsh.ssyx.activity.mapper;
 
-import com.atguigu.ssyx.model.activity.ActivityInfo;
-import com.atguigu.ssyx.model.activity.ActivityRule;
+import com.lsh.ssyx.model.activity.ActivityInfo;
+import com.lsh.ssyx.model.activity.ActivityRule;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -5923,10 +5923,10 @@ public interface ActivityInfoMapper extends BaseMapper<ActivityInfo> {
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.atguigu.ssyx.activity.mapper.ActivityInfoMapper">
+<mapper namespace="com.lsh.ssyx.activity.mapper.ActivityInfoMapper">
 
-    <resultMap id="ActivityRuleMap" type="com.atguigu.ssyx.model.activity.ActivityRule" autoMapping="true"></resultMap>
-    <resultMap id="ActivitySkuMap" type="com.atguigu.ssyx.model.activity.ActivitySku" autoMapping="true"></resultMap>
+    <resultMap id="ActivityRuleMap" type="com.lsh.ssyx.model.activity.ActivityRule" autoMapping="true"></resultMap>
+    <resultMap id="ActivitySkuMap" type="com.lsh.ssyx.model.activity.ActivitySku" autoMapping="true"></resultMap>
 
     <select id="selectExistSkuIdList" resultType="Long">
         select
@@ -5976,12 +5976,12 @@ rule.id,rule.activity_id,rule.condition_amount,rule.condition_num,rule.benefit_a
 ##### 11.5.1 添加CouponInfoController方法
 
 ```java
-package com.atguigu.ssyx.activity.controller;
+package com.lsh.ssyx.activity.controller;
 
-import com.atguigu.ssyx.activity.service.CouponInfoService;
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.model.activity.CouponInfo;
-import com.atguigu.ssyx.vo.activity.CouponRuleVo;
+import com.lsh.ssyx.activity.service.CouponInfoService;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.model.activity.CouponInfo;
+import com.lsh.ssyx.vo.activity.CouponRuleVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.ApiOperation;
@@ -6075,11 +6075,11 @@ public class CouponInfoController {
 ##### 11.5.2 添加CouponInfoService方法
 
 ```java
-package com.atguigu.ssyx.activity.service;
+package com.lsh.ssyx.activity.service;
 
-import com.atguigu.ssyx.model.activity.CouponInfo;
-import com.atguigu.ssyx.model.order.CartInfo;
-import com.atguigu.ssyx.vo.activity.CouponRuleVo;
+import com.lsh.ssyx.model.activity.CouponInfo;
+import com.lsh.ssyx.model.order.CartInfo;
+import com.lsh.ssyx.vo.activity.CouponRuleVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -6111,19 +6111,19 @@ public interface CouponInfoService extends IService<CouponInfo> {
 ##### 11.5.3 添加CouponInfoServiceImpl方法
 
 ```java
-package com.atguigu.ssyx.activity.service.impl;
+package com.lsh.ssyx.activity.service.impl;
 
-import com.atguigu.ssyx.activity.mapper.CouponInfoMapper;
-import com.atguigu.ssyx.activity.mapper.CouponRangeMapper;
-import com.atguigu.ssyx.activity.mapper.CouponUseMapper;
-import com.atguigu.ssyx.activity.service.CouponInfoService;
-import com.atguigu.ssyx.enums.CouponRangeType;
-import com.atguigu.ssyx.model.activity.CouponInfo;
-import com.atguigu.ssyx.model.activity.CouponRange;
-import com.atguigu.ssyx.model.product.Category;
-import com.atguigu.ssyx.model.product.SkuInfo;
-import com.atguigu.ssyx.product.client.ProductFeignClient;
-import com.atguigu.ssyx.vo.activity.CouponRuleVo;
+import com.lsh.ssyx.activity.mapper.CouponInfoMapper;
+import com.lsh.ssyx.activity.mapper.CouponRangeMapper;
+import com.lsh.ssyx.activity.mapper.CouponUseMapper;
+import com.lsh.ssyx.activity.service.CouponInfoService;
+import com.lsh.ssyx.enums.CouponRangeType;
+import com.lsh.ssyx.model.activity.CouponInfo;
+import com.lsh.ssyx.model.activity.CouponRange;
+import com.lsh.ssyx.model.product.Category;
+import com.lsh.ssyx.model.product.SkuInfo;
+import com.lsh.ssyx.product.client.ProductFeignClient;
+import com.lsh.ssyx.vo.activity.CouponRuleVo;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -6505,10 +6505,10 @@ public class SeckillTimeController {
 ###### （1）添加SeckillService
 
 ```java
-package com.atguigu.ssyx.activity.service;
+package com.lsh.ssyx.activity.service;
 
-import com.atguigu.ssyx.model.activity.Seckill;
-import com.atguigu.ssyx.vo.activity.SeckillQueryVo;
+import com.lsh.ssyx.model.activity.Seckill;
+import com.lsh.ssyx.vo.activity.SeckillQueryVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -6526,12 +6526,12 @@ public interface SeckillService extends IService<Seckill> {
 ###### （2）添加SeckillSkuService
 
 ```java
-package com.atguigu.ssyx.activity.service;
+package com.lsh.ssyx.activity.service;
 
-import com.atguigu.ssyx.model.activity.SeckillSku;
-import com.atguigu.ssyx.vo.activity.SeckillSkuQueryVo;
-import com.atguigu.ssyx.vo.activity.SeckillSkuVo;
-import com.atguigu.ssyx.vo.product.SkuStockLockVo;
+import com.lsh.ssyx.model.activity.SeckillSku;
+import com.lsh.ssyx.vo.activity.SeckillSkuQueryVo;
+import com.lsh.ssyx.vo.activity.SeckillSkuVo;
+import com.lsh.ssyx.vo.product.SkuStockLockVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -6574,9 +6574,9 @@ public interface SeckillSkuService extends IService<SeckillSku> {
 ###### （3）添加SeckillTimeService
 
 ```java
-package com.atguigu.ssyx.activity.service;
+package com.lsh.ssyx.activity.service;
 
-import com.atguigu.ssyx.model.activity.SeckillTime;
+import com.lsh.ssyx.model.activity.SeckillTime;
 import com.baomidou.mybatisplus.extension.service.IService;
 import java.util.List;
 import java.util.Map;
@@ -6966,7 +6966,7 @@ public class SeckillTimeServiceImpl extends ServiceImpl<SeckillTimeMapper, Secki
 ```xml
 <dependencies>
     <dependency>
-        <groupId>com.atguigu</groupId>
+        <groupId>com.lsh</groupId>
         <artifactId>common-util</artifactId>
         <version>1.0-SNAPSHOT</version>
     </dependency>
@@ -7061,7 +7061,7 @@ spring:
 ##### 12.3.4 编写启动类 
 
 ```java
-package com.atguigu.ssyx;
+package com.lsh.ssyx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7091,7 +7091,7 @@ public class ServiceGatewayApplication {
 ![image-20230313140309117](images\136.png)
 
 ```java
-package com.atguigu.ssyx.config;
+package com.lsh.ssyx.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7381,7 +7381,7 @@ server:
   port: 8206
 
 mybatis-plus:
-  type-enums-package: com.atguigu.ssyx.enums
+  type-enums-package: com.lsh.ssyx.enums
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
@@ -7403,7 +7403,7 @@ spring:
 ##### 2.2.3 创建启动类
 
 ```java
-package com.atguigu.ssyx;
+package com.lsh.ssyx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7485,7 +7485,7 @@ base64编码，并不是加密，只是把明文信息变成了不可见的字�
 **（4）在common-util添加JWT工具类**
 
 ```java
-package com.atguigu.ssyx.common.utils.helper;
+package com.lsh.ssyx.common.utils.helper;
 
 import io.jsonwebtoken.*;
 import org.springframework.util.StringUtils;
@@ -7546,7 +7546,7 @@ public class JwtHelper {
 **（1）service-util添加Redis配置类**
 
 ```java
-package com.atguigu.ssyx.common.config;
+package com.lsh.ssyx.common.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -7651,7 +7651,7 @@ public class RedisConfig {
 **（2）service-util模块添加常量类**
 
 ```java
-package com.atguigu.ssyx.common.constant;
+package com.lsh.ssyx.common.constant;
 
 /**
  * Redis常量配置类
@@ -7743,7 +7743,7 @@ wx:
 在service-user模块添加工具类，获取配置文件中小程序账号信息
 
 ```java
-package com.atguigu.ssyx.user.utils;
+package com.lsh.ssyx.user.utils;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
@@ -7776,7 +7776,7 @@ public class ConstantPropertiesUtil implements InitializingBean {
 在service-user模块添加工具类，实现httpClient调用
 
 ```java
-package com.atguigu.ssyx.user.utils;
+package com.lsh.ssyx.user.utils;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
@@ -8082,21 +8082,21 @@ public class HttpClientUtils {
 ###### 2.2.4.5 添加WeixinApiController方法
 
 ```java
-package com.atguigu.ssyx.user.controller;
+package com.lsh.ssyx.user.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.atguigu.ssyx.common.constant.RedisConst;
-import com.atguigu.ssyx.common.exception.SsyxException;
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.common.result.ResultCodeEnum;
-import com.atguigu.ssyx.common.utils.helper.JwtHelper;
-import com.atguigu.ssyx.enums.UserType;
-import com.atguigu.ssyx.model.user.User;
-import com.atguigu.ssyx.user.service.UserService;
-import com.atguigu.ssyx.user.utils.ConstantPropertiesUtil;
-import com.atguigu.ssyx.user.utils.HttpClientUtils;
-import com.atguigu.ssyx.vo.user.LeaderAddressVo;
-import com.atguigu.ssyx.vo.user.UserLoginVo;
+import com.lsh.ssyx.common.constant.RedisConst;
+import com.lsh.ssyx.common.exception.SsyxException;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.common.result.ResultCodeEnum;
+import com.lsh.ssyx.common.utils.helper.JwtHelper;
+import com.lsh.ssyx.enums.UserType;
+import com.lsh.ssyx.model.user.User;
+import com.lsh.ssyx.user.service.UserService;
+import com.lsh.ssyx.user.utils.ConstantPropertiesUtil;
+import com.lsh.ssyx.user.utils.HttpClientUtils;
+import com.lsh.ssyx.vo.user.LeaderAddressVo;
+import com.lsh.ssyx.vo.user.UserLoginVo;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -8379,10 +8379,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 ThreadLocal叫做线程变量，意思是ThreadLocal中填充的变量属于当前线程，该变量对其他线程而言是隔离的，也就是说该变量是当前线程独有的变量。ThreadLocal为变量在每个线程中都创建了一个副本，那么每个线程可以访问自己内部的副本变量。
 
 ```java
-package com.atguigu.ssyx.common.security;
+package com.lsh.ssyx.common.security;
 
-import com.atguigu.ssyx.vo.acl.AdminLoginVo;
-import com.atguigu.ssyx.vo.user.UserLoginVo;
+import com.lsh.ssyx.vo.acl.AdminLoginVo;
+import com.lsh.ssyx.vo.user.UserLoginVo;
 
 /**
  * 获取登录用户信息类
@@ -8448,11 +8448,11 @@ public class AuthContextHolder {
 ##### 3.2.4 添加登录拦截器
 
 ```java
-package com.atguigu.ssyx.common.security;
+package com.lsh.ssyx.common.security;
 
-import com.atguigu.ssyx.common.constant.RedisConst;
-import com.atguigu.ssyx.common.utils.JwtHelper;
-import com.atguigu.ssyx.vo.user.UserLoginVo;
+import com.lsh.ssyx.common.constant.RedisConst;
+import com.lsh.ssyx.common.utils.JwtHelper;
+import com.lsh.ssyx.vo.user.UserLoginVo;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -8496,7 +8496,7 @@ public class UserLoginInterceptor implements HandlerInterceptor {
 ##### 3.2.5 设置自定义拦截器路径
 
 ```java
-package com.atguigu.ssyx.common.security;
+package com.lsh.ssyx.common.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -8606,7 +8606,7 @@ spring:
 ##### 3.3.3 创建启动类
 
 ```java
-package com.atguigu.ssyx;
+package com.lsh.ssyx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8795,11 +8795,11 @@ Page<SkuEs> findByOrderByHotScoreDesc(Pageable page);
 ##### 3.3.7 添加HomeApiController方法
 
 ```java
-package com.atguigu.ssyx.home.api;
+package com.lsh.ssyx.home.api;
 
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.common.security.AuthContextHolder;
-import com.atguigu.ssyx.home.service.HomeService;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.common.security.AuthContextHolder;
+import com.lsh.ssyx.home.service.HomeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8844,18 +8844,18 @@ public interface HomeService {
 ##### 3.2.9 添加HomeServiceImpl方法
 
 ```java
-package com.atguigu.ssyx.home.service.impl;
+package com.lsh.ssyx.home.service.impl;
 
-import com.atguigu.ssyx.activity.client.ActivityFeignClient;
-import com.atguigu.ssyx.search.client.SearchFeignClient;
-import com.atguigu.ssyx.activity.client.SeckillFeignClient;
-import com.atguigu.ssyx.home.service.HomeService;
-import com.atguigu.ssyx.model.product.Category;
-import com.atguigu.ssyx.model.product.SkuInfo;
-import com.atguigu.ssyx.model.search.SkuEs;
-import com.atguigu.ssyx.product.client.ProductFeignClient;
-import com.atguigu.ssyx.user.client.UserFeignClient;
-import com.atguigu.ssyx.vo.user.LeaderAddressVo;
+import com.lsh.ssyx.activity.client.ActivityFeignClient;
+import com.lsh.ssyx.search.client.SearchFeignClient;
+import com.lsh.ssyx.activity.client.SeckillFeignClient;
+import com.lsh.ssyx.home.service.HomeService;
+import com.lsh.ssyx.model.product.Category;
+import com.lsh.ssyx.model.product.SkuInfo;
+import com.lsh.ssyx.model.search.SkuEs;
+import com.lsh.ssyx.product.client.ProductFeignClient;
+import com.lsh.ssyx.user.client.UserFeignClient;
+import com.lsh.ssyx.vo.user.LeaderAddressVo;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -8960,10 +8960,10 @@ public class HomeServiceImpl implements HomeService {
 ##### 4.2.1 service-home添加CategoryApiController
 
 ```java
-package com.atguigu.ssyx.home.api;
+package com.lsh.ssyx.home.api;
 
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.product.client.ProductFeignClient;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.product.client.ProductFeignClient;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9060,9 +9060,9 @@ public Page<SkuEs> search(Pageable pageable, SkuEsQueryVo skuEsQueryVo) {
 ##### 4.3.4 添加SkuRepository方法
 
 ```java
-package com.atguigu.ssyx.search.repository;
+package com.lsh.ssyx.search.repository;
 
-import com.atguigu.ssyx.model.search.SkuEs;
+import com.lsh.ssyx.model.search.SkuEs;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
@@ -9175,9 +9175,9 @@ List<ActivityRule> selectActivityRuleList(@Param("skuId")Long skuId);
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.atguigu.ssyx.activity.mapper.ActivityInfoMapper">
+<mapper namespace="com.lsh.ssyx.activity.mapper.ActivityInfoMapper">
 
-    <resultMap id="ActivityRuleMap" type="com.atguigu.ssyx.model.activity.ActivityRule" autoMapping="true"></resultMap>
+    <resultMap id="ActivityRuleMap" type="com.lsh.ssyx.model.activity.ActivityRule" autoMapping="true"></resultMap>
 
     <select id="selectActivityRuleList" resultMap="ActivityRuleMap">
     	select
@@ -9203,7 +9203,7 @@ rule.id,rule.activity_id,rule.condition_amount,rule.condition_num,rule.benefit_a
 **创建ActivityFeignClient定义接口**
 
 ```java
-package com.atguigu.ssyx.activity.client;
+package com.lsh.ssyx.activity.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9571,11 +9571,11 @@ public class Demo5 {
 ##### 5.3.1 添加ItemApiController
 
 ```java
-package com.atguigu.ssyx.home.api;
+package com.lsh.ssyx.home.api;
 
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.common.security.AuthContextHolder;
-import com.atguigu.ssyx.home.service.ItemService;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.common.security.AuthContextHolder;
+import com.lsh.ssyx.home.service.ItemService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
@@ -9606,7 +9606,7 @@ public class ItemApiController {
 ##### 5.3.2 添加ItemService
 
 ```java
-package com.atguigu.ssyx.home.service;
+package com.lsh.ssyx.home.service;
 
 import java.util.Map;
 
@@ -9622,16 +9622,16 @@ public interface ItemService {
 ##### 5.3.3 添加ItemServiceImpl
 
 ```java
-package com.atguigu.ssyx.home.service.impl;
+package com.lsh.ssyx.home.service.impl;
 
-import com.atguigu.ssyx.search.client.SearchFeignClient;
-import com.atguigu.ssyx.activity.client.ActivityFeignClient;
-import com.atguigu.ssyx.activity.client.SeckillFeignClient;
-import com.atguigu.ssyx.enums.SkuType;
-import com.atguigu.ssyx.product.client.ProductFeignClient;
-import com.atguigu.ssyx.home.service.ItemService;
-import com.atguigu.ssyx.vo.activity.SeckillSkuVo;
-import com.atguigu.ssyx.vo.product.SkuInfoVo;
+import com.lsh.ssyx.search.client.SearchFeignClient;
+import com.lsh.ssyx.activity.client.ActivityFeignClient;
+import com.lsh.ssyx.activity.client.SeckillFeignClient;
+import com.lsh.ssyx.enums.SkuType;
+import com.lsh.ssyx.product.client.ProductFeignClient;
+import com.lsh.ssyx.home.service.ItemService;
+import com.lsh.ssyx.vo.activity.SeckillSkuVo;
+import com.lsh.ssyx.vo.product.SkuInfoVo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -9852,9 +9852,9 @@ List<CouponInfo> selectCouponInfoList(@Param("skuId") Long skuId, @Param("catego
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.atguigu.ssyx.activity.mapper.CouponInfoMapper">
+<mapper namespace="com.lsh.ssyx.activity.mapper.CouponInfoMapper">
 
-    <resultMap id="CouponInfoMap" type="com.atguigu.ssyx.model.activity.CouponInfo" autoMapping="true">
+    <resultMap id="CouponInfoMap" type="com.lsh.ssyx.model.activity.CouponInfo" autoMapping="true">
     </resultMap>
 
     <select id="selectCouponInfoList" resultMap="CouponInfoMap">
@@ -9879,13 +9879,13 @@ info.id,info.coupon_type,info.coupon_name,info.amount,info.condition_amount,info
 ###### 5.3.6.6 service-activity-client定义接口
 
 ```java
-package com.atguigu.ssyx.activity.client;
+package com.lsh.ssyx.activity.client;
 
-import com.atguigu.ssyx.activity.client.impl.ActivityDegradeFeignClient;
-import com.atguigu.ssyx.model.activity.CouponInfo;
-import com.atguigu.ssyx.model.order.CartInfo;
-import com.atguigu.ssyx.vo.order.CartInfoVo;
-import com.atguigu.ssyx.vo.order.OrderConfirmVo;
+import com.lsh.ssyx.activity.client.impl.ActivityDegradeFeignClient;
+import com.lsh.ssyx.model.activity.CouponInfo;
+import com.lsh.ssyx.model.order.CartInfo;
+import com.lsh.ssyx.vo.order.CartInfoVo;
+import com.lsh.ssyx.vo.order.OrderConfirmVo;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10086,7 +10086,7 @@ spring:
 （3）创建启动类
 
 ```java
-package com.atguigu.ssyx;
+package com.lsh.ssyx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11079,7 +11079,7 @@ application-dev.yml
 server:
   port: 8209
 mybatis-plus:
-  type-enums-package: com.atguigu.ssyx.enums
+  type-enums-package: com.lsh.ssyx.enums
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath:mapper/*.xml
@@ -11133,7 +11133,7 @@ spring:
 （3）创建启动类
 
 ```java
-package com.atguigu.ssyx;
+package com.lsh.ssyx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11868,8 +11868,8 @@ Integer unlockStock(@Param("skuId")Long skuId, @Param("skuNum")Integer skuNum);
 **SkuInfoMapper添加SQL语句**
 
 ```xml
-<mapper namespace="com.atguigu.ssyx.product.mapper.SkuInfoMapper">
-	<resultMap id="skuInfoMap" type="com.atguigu.ssyx.model.product.SkuInfo" autoMapping="true">
+<mapper namespace="com.lsh.ssyx.product.mapper.SkuInfoMapper">
+	<resultMap id="skuInfoMap" type="com.lsh.ssyx.model.product.SkuInfo" autoMapping="true">
 	</resultMap>
 	
 	<!-- 用于select查询公用抽取的列 -->
@@ -12090,7 +12090,7 @@ application-dev.yml
 server:
   port: 8210
 mybatis-plus:
-  type-enums-package: com.atguigu.ssyx.enums
+  type-enums-package: com.lsh.ssyx.enums
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath:mapper/*.xml
@@ -12159,7 +12159,7 @@ weixin:
 ###### （3）创建启动类
 
 ```java
-package com.atguigu.ssyx;
+package com.lsh.ssyx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12200,14 +12200,14 @@ https://developers.weixin.qq.com/miniprogram/dev/api/payment/wx.requestPayment.h
 ###### （1）添加WeixinController
 
 ```java
-package com.atguigu.ssyx.payment.api;
+package com.lsh.ssyx.payment.api;
 
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.enums.PaymentType;
-import com.atguigu.ssyx.payment.service.PaymentService;
-import com.atguigu.ssyx.payment.service.WeixinService;
-import com.atguigu.ssyx.payment.util.ConstantPropertiesUtils;
-import com.atguigu.ssyx.payment.util.StreamUtil;
+import com.lsh.ssyx.common.result.Result;
+import com.lsh.ssyx.enums.PaymentType;
+import com.lsh.ssyx.payment.service.PaymentService;
+import com.lsh.ssyx.payment.service.WeixinService;
+import com.lsh.ssyx.payment.util.ConstantPropertiesUtils;
+import com.lsh.ssyx.payment.util.StreamUtil;
 import com.github.wxpay.sdk.WXPayConstants;
 import com.github.wxpay.sdk.WXPayUtil;
 import io.swagger.annotations.Api;
@@ -12275,7 +12275,7 @@ public class WeixinController {
 ###### （2）添加WeixinService
 
 ```java
-package com.atguigu.ssyx.payment.service;
+package com.lsh.ssyx.payment.service;
 
 import java.util.Map;
 
@@ -12301,16 +12301,16 @@ public interface WeixinService {
 ###### （3）添加WeixinServiceImpl
 
 ```java
-package com.atguigu.ssyx.payment.service.impl;
+package com.lsh.ssyx.payment.service.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.atguigu.ssyx.enums.PaymentType;
-import com.atguigu.ssyx.model.order.PaymentInfo;
-import com.atguigu.ssyx.payment.service.PaymentService;
-import com.atguigu.ssyx.payment.service.WeixinService;
-import com.atguigu.ssyx.payment.util.ConstantPropertiesUtils;
-import com.atguigu.ssyx.payment.util.HttpClient;
-import com.atguigu.ssyx.vo.user.UserLoginVo;
+import com.lsh.ssyx.enums.PaymentType;
+import com.lsh.ssyx.model.order.PaymentInfo;
+import com.lsh.ssyx.payment.service.PaymentService;
+import com.lsh.ssyx.payment.service.WeixinService;
+import com.lsh.ssyx.payment.util.ConstantPropertiesUtils;
+import com.lsh.ssyx.payment.util.HttpClient;
+import com.lsh.ssyx.vo.user.UserLoginVo;
 import com.github.wxpay.sdk.WXPayUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -12441,10 +12441,10 @@ public class WeixinServiceImpl implements WeixinService {
 ###### （4）添加PaymentService
 
 ```java
-package com.atguigu.ssyx.payment.service;
+package com.lsh.ssyx.payment.service;
 
-import com.atguigu.ssyx.enums.PaymentType;
-import com.atguigu.ssyx.model.order.PaymentInfo;
+import com.lsh.ssyx.enums.PaymentType;
+import com.lsh.ssyx.model.order.PaymentInfo;
 import java.util.Map;
 
 public interface PaymentService {
@@ -12466,19 +12466,19 @@ public interface PaymentService {
 ###### （5）添加PaymentServiceImpl
 
 ```java
-package com.atguigu.ssyx.payment.service.impl;
+package com.lsh.ssyx.payment.service.impl;
 
-import com.atguigu.ssyx.common.constant.MqConst;
-import com.atguigu.ssyx.common.execption.GmallException;
-import com.atguigu.ssyx.common.result.ResultCodeEnum;
-import com.atguigu.ssyx.common.service.RabbitService;
-import com.atguigu.ssyx.enums.PaymentStatus;
-import com.atguigu.ssyx.enums.PaymentType;
-import com.atguigu.ssyx.model.order.OrderInfo;
-import com.atguigu.ssyx.model.order.PaymentInfo;
-import com.atguigu.ssyx.order.client.OrderFeignClient;
-import com.atguigu.ssyx.payment.mapper.PaymentInfoMapper;
-import com.atguigu.ssyx.payment.service.PaymentService;
+import com.lsh.ssyx.common.constant.MqConst;
+import com.lsh.ssyx.common.execption.GmallException;
+import com.lsh.ssyx.common.result.ResultCodeEnum;
+import com.lsh.ssyx.common.service.RabbitService;
+import com.lsh.ssyx.enums.PaymentStatus;
+import com.lsh.ssyx.enums.PaymentType;
+import com.lsh.ssyx.model.order.OrderInfo;
+import com.lsh.ssyx.model.order.PaymentInfo;
+import com.lsh.ssyx.order.client.OrderFeignClient;
+import com.lsh.ssyx.payment.mapper.PaymentInfoMapper;
+import com.lsh.ssyx.payment.service.PaymentService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
