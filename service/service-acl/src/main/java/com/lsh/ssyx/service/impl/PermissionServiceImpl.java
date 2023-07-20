@@ -24,7 +24,6 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
     public List<Permission> queryAllMenu() {
         //获取全部权限数据
         List<Permission> allPermissionList = baseMapper.selectList(new QueryWrapper<Permission>().orderByAsc("CAST(id AS SIGNED)"));
-
         //把权限数据构建成树形结构数据
         return PermissionHelper.buildPermission(allPermissionList);
     }
