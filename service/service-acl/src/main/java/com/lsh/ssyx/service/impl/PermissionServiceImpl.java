@@ -45,7 +45,7 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
      */
     private void selectChildListById(Long id, List<Long> idList) {
         List<Permission> childList = baseMapper.selectList(new QueryWrapper<Permission>().eq("pid", id).select("id"));
-        childList.stream().forEach(item -> {
+        childList.forEach(item -> {
             idList.add(item.getId());
             this.selectChildListById(item.getId(), idList);
         });
