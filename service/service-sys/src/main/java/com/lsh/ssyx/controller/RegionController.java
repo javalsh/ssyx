@@ -4,6 +4,7 @@ import com.lsh.ssyx.result.Result;
 import com.lsh.ssyx.service.RegionService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ import javax.annotation.Resource;
 @Api(tags = "区域管理")
 @RestController
 @RequestMapping("/admin/sys/region")
+@CrossOrigin
 public class RegionController {
 
     @Resource

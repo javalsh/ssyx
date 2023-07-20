@@ -9,6 +9,7 @@ import com.lsh.ssyx.vo.sys.RegionWareQueryVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,6 +27,7 @@ import javax.annotation.Resource;
 @Api(value = "区域仓库管理", tags = "区域仓库管理")
 @RestController
 @RequestMapping(value="/admin/sys/regionWare")
+@CrossOrigin
 public class RegionWareController {
 
     @Resource

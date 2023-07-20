@@ -1,6 +1,8 @@
 package com.lsh.ssyx.controller;
 
 import com.lsh.ssyx.result.Result;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +16,7 @@ import java.util.Map;
  * @author shaohua.liu
  * Create at 2023/7/4
  */
+@Api(tags = "登录管理")
 @RestController
 @RequestMapping("/admin/acl/index")
 @CrossOrigin     //跨域
@@ -22,6 +25,7 @@ public class IndexController {
     /**
      * 1、请求登陆的login
      */
+    @ApiOperation(value = "请求登陆的login")
     @PostMapping("login")
     public Result login() {
         Map<String,Object> map = new HashMap<>();
@@ -32,6 +36,7 @@ public class IndexController {
     /**
      * 2 获取用户信息
      */
+    @ApiOperation(value = "获取用户信息")
     @GetMapping("info")
     public Result info(){
         Map<String,Object> map = new HashMap<>();
@@ -43,6 +48,7 @@ public class IndexController {
     /**
      * 3 退出
      */
+    @ApiOperation(value = "退出")
     @PostMapping("logout")
     public Result logout(){
         return Result.ok(null);
