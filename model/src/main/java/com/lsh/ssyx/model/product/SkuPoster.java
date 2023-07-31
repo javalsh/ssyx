@@ -12,6 +12,7 @@ import lombok.Data;
  * SpuPoster
  * </p>
  *
+ * @author liushaohua
 
  */
 @Data
