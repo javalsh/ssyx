@@ -44,13 +44,13 @@ public class FileUploadServiceImpl implements FileUploadService {
 
             //获取文件实际名称
             String objectName = file.getOriginalFilename();
-            String uuid = UUID.randomUUID().toString().replace("-","");
-            objectName = uuid+objectName;
+            String uuid = UUID.randomUUID().toString().replace("-", "");
+            objectName = uuid + objectName;
 
             //对上传文件进行分组，根据当前年/月/日
             // objectName:  2023/10/10/uuid01.jpg
             String currentDateTime = new DateTime().toString("yyyy/MM/dd");
-            objectName = currentDateTime+"/"+objectName;
+            objectName = currentDateTime + "/" + objectName;
 
             // 创建PutObjectRequest对象
             //第一个 bucket名称
