@@ -44,7 +44,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 
             //获取文件实际名称
             String objectName = file.getOriginalFilename();
-            String uuid = UUID.randomUUID().toString().replaceAll("-","");
+            String uuid = UUID.randomUUID().toString().replace("-","");
             objectName = uuid+objectName;
 
             //对上传文件进行分组，根据当前年/月/日
